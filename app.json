@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/form/form",
+    "pages/logs/logs",
+    "pages/test2/test2",
+    "pages/province/province",
+    "pages/dailyReport/dailyReport",
+    "pages/category/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000001",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/首页.png",
+        "selectedIconPath":"image/首页.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "iconPath": "image/分类未激活.png",
+        "selectedIconPath":"image/分类.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/form/form",
+        "iconPath": "image/表单no.png",
+        "selectedIconPath":"image/表单yes.png",
+        "text": "表单"
+      },
+      {
+        "pagePath": "pages/test2/test2",
+        "iconPath": "image/用户画像未激活.png",
+        "selectedIconPath":"image/用户画像已激活.png",
+        "text": "轮播图"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

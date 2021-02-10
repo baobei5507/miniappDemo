@@ -1,0 +1,4 @@
+<!--pages/province/province.wxml-->
+<view wx:for="{{provinces}}" wx:for-item="item">
+   <text>{{item.name}}</text>
+</view>

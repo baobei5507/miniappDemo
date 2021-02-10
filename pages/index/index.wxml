@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<SearchInput>
+</SearchInput>
+
+  <!-- 轮播图-->
+  <view class="index_swiper">
+  <swiper indicator-dots="{{true}}" interval="3000" autoplay="{{true}}">
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+      <image src="{{item.image_src}}" />
+    </swiper-item>
+  </swiper>
+  </view>
+
+  <!-- 导航 -->
+  <view class="index_cate">
+    <navigator wx:for="{{catesList}}" wx:key="name">
+      <image mode="widthFix" src="{{item.image_src}}" />
+    </navigator>
+  </view>
+
+  <view class="index_floor">
+    <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item" wx:for-index="index" wx:key="floor_title">
+    <!-- 标题 -->
+      <view class="floor_title">
+        <image  mode="widthFix" src="{{item.floor_title.image_src}}"/>
+      </view>
+
+      <!-- 内容 -->
+      <view class="floor_list">
+      <navigator wx:for="{{item.product_list}}" wx:for-item="item1" wx:for-index="index1" wx:key="name">
+       <image mode="{{index1 === 0?'widthFix' : 'scaleToFill'}}" src="{{item1.image_src}}" />
+      </navigator>
+      </view>
+    </view>
+  </view>
+
+
+<!-- 换行 -->
+
+  <view>
+    <text>\n</text>
+  </view>
+  
+  <!-- 备忘录 -->
+  <!-- <block wx:for="{{myTools}}" wx:for-index="index" wx:for-item="item" wx:key="key">
+    <view class="img_text" bindtap="routeToLink" data-key="{{item.key}}" data-link="{{item.link}}" data-index="{{index}}" data-name="{{item.text}}">
+    <mp-icon type="field" icon="note" color="black" size="{{25}}"></mp-icon>
+    <view>{{item.text}}</view>
+  </view>
+
+  </block> -->
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-gallery": "weui-miniprogram/gallery/gallery",
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog"
+  }
+}
