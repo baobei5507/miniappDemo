@@ -12,10 +12,6 @@ Page({
     swiperList:[],
     catesList:[],
     floorList:[],
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     provinces: ROUTER.PROVINCE,
     myTools: [
       {
@@ -34,25 +30,25 @@ Page({
 
   // 获取轮播图数据
   getSwiperList(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata"}).then((res)=>{
+    request({url:"/home/swiperdata"}).then((res)=>{
       this.setData({
-        swiperList: res.data.message
+        swiperList: res
       })
     })
   },
   // 获取分类导航
   getCatesList(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"}).then((res)=>{
+    request({url:"/home/catitems"}).then((res)=>{
       this.setData({
-        catesList: res.data.message
+        catesList: res
       })
     })
   },
   // 获取楼层
   getFloorList(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"}).then((res)=>{
+    request({url:"/home/floordata"}).then((res)=>{
       this.setData({
-        floorList: res.data.message
+        floorList: res
       })
     })
   },

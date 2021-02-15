@@ -1,12 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/form/form",
     "pages/logs/logs",
-    "pages/test2/test2",
     "pages/province/province",
     "pages/dailyReport/dailyReport",
-    "pages/category/index"
+    "pages/category/index",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
+    "pages/cart/index",
+    "pages/pay/index",
+    "pages/login/index",
+    "pages/user/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,26 +25,26 @@
       {
         "pagePath": "pages/index/index",
         "iconPath": "image/首页.png",
-        "selectedIconPath":"image/首页.png",
+        "selectedIconPath": "image/首页.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/category/index",
         "iconPath": "image/分类未激活.png",
-        "selectedIconPath":"image/分类.png",
+        "selectedIconPath": "image/分类.png",
         "text": "分类"
       },
       {
-        "pagePath": "pages/form/form",
-        "iconPath": "image/表单no.png",
-        "selectedIconPath":"image/表单yes.png",
-        "text": "表单"
+        "pagePath": "pages/cart/index",
+        "iconPath": "image/购物车.png",
+        "selectedIconPath": "image/购物车active.png",
+        "text": "购物车"
       },
       {
-        "pagePath": "pages/test2/test2",
-        "iconPath": "image/用户画像未激活.png",
-        "selectedIconPath":"image/用户画像已激活.png",
-        "text": "轮播图"
+        "pagePath": "pages/user/index",
+        "iconPath": "image/购物车.png",
+        "selectedIconPath": "image/购物车active.png",
+        "text": "我的"
       }
     ]
   },
