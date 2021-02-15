@@ -43,7 +43,7 @@
   padding: 10rpx;
 }
 .index_floor .floor_group .floor_title image {
-  width: 100%;
+  width: 10%;
 }
 .index_floor .floor_group .floor_list {
   overflow: hidden;

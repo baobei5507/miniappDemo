@@ -1,7 +1,9 @@
 // index.js
 
-import {request} from "../../request/index.js";
-
+import {request,http} from "../../request/index.js";
+const app = getApp(); 
+const WXAPI = require('apifm-wxapi');
+WXAPI.init('kekedabaozha')
 const { ROUTER } = require("../../router")
 
 
@@ -30,11 +32,17 @@ Page({
 
   // 获取轮播图数据
   getSwiperList(){
-    request({url:"/home/swiperdata"}).then((res)=>{
-      this.setData({
-        swiperList: res
-      })
-    })
+    // request({url:"/home/swiperdata"}).then((res)=>{
+    //   this.setData({
+    //     swiperList: res
+    //   })
+    // })
+    WXAPI.banners().then(res => app.handleDestruction(res))
+      .then((data) => {
+        this.setData({
+          swiperList: data,
+        })
+      });
   },
   // 获取分类导航
   getCatesList(){
@@ -43,6 +51,12 @@ Page({
         catesList: res
       })
     })
+    // WXAPI.goodsCategory().then(res => app.handleDestruction(res))
+    //   .then((data) => {
+    //     this.setData({
+    //       catesList: data,
+    //     })
+    //   });
   },
   // 获取楼层
   getFloorList(){
@@ -53,23 +67,12 @@ Page({
     })
   },
   routeToLink(e){
-      const {index,key,link,name} = e.currentTarget.dataset;
-        wx.navigateTo({
-      url: link,
-      events: {
-            // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function(data) {
-          console.log(data)
-        },
-        someEvent: function(data) {
-          console.log(data)
-        }
-      },
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-      }
+    let {name} = e.currentTarget.dataset;
+    wx.switchTab({
+      url: '/pages/category/index',
     })
+
+       
   },
    
 })

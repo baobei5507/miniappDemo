@@ -33,6 +33,28 @@ App({
       }
     })
   },
+
+  handleDestruction(res) {
+    const {
+      data = []
+    } = res; // 设默认值为 [] 以免获取数据失败时发生错误
+    return data;
+  },
+  login(e) {
+    if (!e.detail.userInfo) {
+      // 你点了取消授权
+      return;
+    }
+    wx.login({
+      success: function (res) {
+        const code = res.code; // 微信登录接口返回的 code 参数，下面登录接口需要用到
+        WXAPI.login_wx(code).then(function (res) {
+          // 登录接口返回结果
+          console.log(res)
+        })
+      }
+    })
+  },
   globalData: {
     userInfo: null
   }
